@@ -1,20 +1,10 @@
-FROM centos:7
+FROM ubuntu:trusty
 MAINTAINER Carey Tzou <carey@tnidea.com>
 
-# Install wget tar python-setuptools openssh-server & supervisor
-RUN yum -y update; \
-    yum -y install wget tar python-setuptools; \
-    yum clean all && rm -rf /var/cache/yum/*
+RUN apt-get update; apt-get install -y unzip openjdk-7-jre-headless wget supervisor docker.io openssh-server
+ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64/
+RUN echo 'root:ziyunhxpass' | chpasswd
+RUN mkdir /var/run/sshd
+RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
-RUN easy_install supervisor
-RUN mkdir /etc/supervisor
-RUN echo_supervisord_conf > /etc/supervisord.conf
-
-# Downloading the RPM from oracle
-ENV JAVA_VERSION 8u65
-ENV BUILD_VERSION b17
-RUN wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/$JAVA_VERSION-$BUILD_VERSION/jdk-$JAVA_VERSION-linux-x64.rpm" -O /tmp/jdk-8-linux-x64.rpm
-
-# Install the RPM
-RUN yum -y install /tmp/jdk-8-linux-x64.rpm
-ENV JAVA_HOME /usr/java/latest
+EXPOSE 22
