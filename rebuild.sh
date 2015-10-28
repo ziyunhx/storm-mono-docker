@@ -1,5 +1,7 @@
 #!/bin/bash
 
+docker build -t="ziyunhx/base" base
+docker build -t="ziyunhx/zookeeper" zookeeper
 docker build -t="ziyunhx/storm" storm
 docker build -t="ziyunhx/storm-nimbus" storm-nimbus
 docker build -t="ziyunhx/storm-supervisor" storm-supervisor
