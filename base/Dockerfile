@@ -1,9 +1,9 @@
 FROM centos:7
 MAINTAINER Carey Tzou <carey@tnidea.com>
 
-RUN echo 'root:ziyunhxpass' | chpasswd
 # Install wget & tar
-RUN yum -y install wget tar python-setuptools && \
+RUN yum -y update; \
+    yum -y install wget tar python-setuptoolsp; \
     yum clean all && rm -rf /var/cache/yum/*
 
 RUN easy_install supervisor
