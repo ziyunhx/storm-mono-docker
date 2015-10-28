@@ -3,7 +3,7 @@ MAINTAINER Carey Tzou <carey@tnidea.com>
 
 # Install wget tar python-setuptools openssh-server & supervisor
 RUN yum -y update; \
-    yum -y install wget tar python-setuptools openssh-server; \
+    yum -y install wget tar python-setuptools; \
     yum clean all && rm -rf /var/cache/yum/*
 
 RUN easy_install supervisor

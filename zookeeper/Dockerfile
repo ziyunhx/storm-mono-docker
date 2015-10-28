@@ -15,4 +15,4 @@ EXPOSE 2181 2888 3888
 WORKDIR /opt/zookeeper-3.4.6
 VOLUME ["/opt/zookeeper-3.4.6/conf", "/opt/zookeeper-3.4.6/data"]
 
-CMD /usr/sbin/sshd && /usr/bin/start-zk.sh
+CMD /usr/bin/start-zk.sh
