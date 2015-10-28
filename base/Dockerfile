@@ -3,7 +3,7 @@ MAINTAINER Carey Tzou <carey@tnidea.com>
 
 # Install wget & tar
 RUN yum -y update; \
-    yum -y install wget tar python-setuptoolsp; \
+    yum -y install wget tar python-setuptools; \
     yum clean all && rm -rf /var/cache/yum/*
 
 RUN easy_install supervisor
