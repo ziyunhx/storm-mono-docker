@@ -8,8 +8,7 @@ RUN yum -y update; \
 
 RUN easy_install supervisor
 RUN mkdir /etc/supervisor
-RUN mkdir /etc/supervisor/conf.d
-RUN echo_supervisord_conf > /etc/supervisor/supervisord.conf
+RUN echo_supervisord_conf > /etc/supervisord.conf
 
 # Downloading the RPM from oracle
 ENV JAVA_VERSION 8u65
