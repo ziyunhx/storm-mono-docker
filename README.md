@@ -13,7 +13,9 @@ The images are available directly from [https://index.docker.io](https://index.d
 
 Start a cluster:
 
-- ```docker-compose up```
+- ```docker-compose up -d```
+
+- The ```docker-compose up``` command aggregates the output of each container. When the command exits, all containers are stopped. Running ```docker-compose up -d``` starts the containers in the background and leaves them running.
 
 Destroy a cluster:
 
@@ -21,7 +23,15 @@ Destroy a cluster:
 
 Add more supervisors:
 
-- ```docker-compose scale supervisor=3```
+- ```docker-compose scale supervisor=4```
+
+Kill and rm all docker cache:
+
+- ```docker kill $(docker ps -q) ; docker rm $(docker ps -a -q)```
+
+Remove all docker image:
+
+- ```docker rmi $(docker images -q -a)```
 
 ##Building
 
