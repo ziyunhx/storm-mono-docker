@@ -1,4 +1,4 @@
-FROM ziyunhx/storm:0.9.5
+FROM ziyunhx/storm:0.9.6
 MAINTAINER Carey Tzou <carey@tnidea.com>
 
 RUN /usr/bin/config-supervisord.sh nimbus 

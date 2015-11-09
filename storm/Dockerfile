@@ -1,9 +1,9 @@
 FROM ziyunhx/base
 MAINTAINER Carey Tzou <carey@tnidea.com>
 
-RUN wget -q -O - http://mirrors.sonic.net/apache/storm/apache-storm-0.9.5/apache-storm-0.9.5.tar.gz | tar -xzf - -C /opt
+RUN wget -q -O - http://mirrors.sonic.net/apache/storm/apache-storm-0.9.6/apache-storm-0.9.6.tar.gz | tar -xzf - -C /opt
 
-ENV STORM_HOME /opt/apache-storm-0.9.5
+ENV STORM_HOME /opt/apache-storm-0.9.6
 RUN groupadd storm; useradd --gid storm --home-dir /home/storm --create-home --shell /bin/bash storm; chown -R storm:storm $STORM_HOME; mkdir /var/log/storm ; chown -R storm:storm /var/log/storm
 
 RUN ln -s $STORM_HOME/bin/storm /usr/bin/storm
