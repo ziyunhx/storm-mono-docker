@@ -1,6 +1,8 @@
 storm.zookeeper.servers:
     - "%zookeeper%"
+storm.zookeeper.port: 49181
 nimbus.host: "%nimbus%"
+nimbus.thrift.port: 49627
 drpc.servers:
   - "%nimbus%"
 drpc.port: 3772
