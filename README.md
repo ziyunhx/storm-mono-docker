@@ -72,7 +72,7 @@ Following the example above, after discovering the nimbus host IP (could be loca
 
 If the above method is not successful, please change the storm.yaml file like this:
 
-	nimbus.host: "192.168.59.103"	
+	nimbus.seeds: ["192.168.59.103"]	
 	nimbus.thrift.port: 49627
 
 And run the following command:
