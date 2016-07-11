@@ -6,6 +6,7 @@ RUN echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo t
 RUN apt-get update
 RUN apt-get install -y mono-complete
 
+RUN apt-get install -y apt-transport-https
 RUN sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list'
 RUN apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893
 RUN apt-get update
