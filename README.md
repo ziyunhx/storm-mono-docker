@@ -27,11 +27,11 @@ Add more supervisors:
 
 Kill and rm all docker cache:
 
-- ```docker kill $(docker ps -q) ; docker rm $(docker ps -a -q)```
+- ```docker kill $(docker ps -f "name=stormmonodocker" -q) ; docker rm $(docker ps -f "name=stormmonodocker" -q)```
 
 Remove all docker image:
 
-- ```docker rmi $(docker images -q -a)```
+- ```docker rmi $(docker images | grep "^ziyunhx" | awk "{print $3}")```
 
 ##Building
 
