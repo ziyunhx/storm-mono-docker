@@ -27,7 +27,7 @@ Add more supervisors:
 
 Kill and rm all docker cache:
 
-- ```docker kill $(docker ps -f "name=stormmonodocker" -q) ; docker rm $(docker ps -f "name=stormmonodocker" -q)```
+- ```docker kill $(docker ps -a -f "name=stormmonodocker" -q) ; docker rm $(docker ps -a -f "name=stormmonodocker" -q)```
 
 Remove all docker image:
 
