@@ -4,7 +4,7 @@ zookeeper:
     - "49181:2181"
     - "22"
 nimbus:
-  image: ziyunhx/storm-nimbus:1.0.1
+  image: ziyunhx/storm-nimbus:1.0.2
   ports:
     - "49773:3773"
     - "49772:3772"
@@ -13,7 +13,7 @@ nimbus:
   links: 
     - zookeeper:zk
 supervisor:
-  image: ziyunhx/storm-supervisor:1.0.1
+  image: ziyunhx/storm-supervisor:1.0.2
   ports:
     - "8000"
     - "22"
@@ -21,7 +21,7 @@ supervisor:
     - nimbus:nimbus
     - zookeeper:zk
 ui:
-  image: ziyunhx/storm-ui:1.0.1
+  image: ziyunhx/storm-ui:1.0.2
   ports:
     - "49080:8080"
     - "22"
