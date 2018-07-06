@@ -1,5 +1,4 @@
-FROM ziyunhx/storm:1.1.0
-MAINTAINER Carey Tzou <carey@tnidea.com>
+FROM ziyunhx/storm:1.2.2
 
 RUN /usr/bin/config-supervisord.sh ui
 

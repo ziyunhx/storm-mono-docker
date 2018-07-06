@@ -1,5 +1,4 @@
 FROM ziyunhx/base
-MAINTAINER Carey Tzou <carey@tnidea.com>
 
 RUN wget -q -O - http://mirror.vorboss.net/apache/zookeeper/zookeeper-3.4.9/zookeeper-3.4.9.tar.gz | tar -xzf - -C /opt
 RUN mv /opt/zookeeper-3.4.9/conf/zoo_sample.cfg /opt/zookeeper-3.4.9/conf/zoo.cfg
