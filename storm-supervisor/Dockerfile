@@ -1,15 +1,15 @@
 FROM ziyunhx/storm:1.2.2
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-RUN echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
+RUN apt-get install apt-transport-https
+RUN "deb https://download.mono-project.com/repo/ubuntu stable-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
 RUN apt-get update
 RUN apt-get install -y mono-complete
 
-RUN apt-get install -y apt-transport-https
-RUN sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list'
-RUN apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893
+RUN wget -q https://packages.microsoft.com/config/ubuntu/14.04/packages-microsoft-prod.deb
+RUN dpkg -i packages-microsoft-prod.deb
 RUN apt-get update
-RUN apt-get install -y dotnet-dev-1.0.0-preview2-003121
+RUN apt-get install dotnet-sdk-2.1
 
 EXPOSE 6700
 EXPOSE 6701
